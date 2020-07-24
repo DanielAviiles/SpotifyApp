@@ -1,0 +1,33 @@
+
+<img [src]="imagen" class="card-img-top" [alt]="title">
+<div class="card-body">
+
+  <h5 class="card-title">{{ title }}</h5>
+
+  <p class="card-text" *ngIf="artistas.length > 0">
+    Artistas:
+    <span class="badge badge-pill badge-secondary" *ngFor="let artista of artistas">
+      {{ artista.name }}
+    </span>
+    <br>
+    Lanzamiento:
+    <span class="badge badge-warning">{{fechaRelease | date: 'dd/MMM/yyyy'}}</span>
+  </p>
+
+  <p class="card-text" *ngIf="tipyCard == 'artist'">
+    <ng-template [ngIf]="generos.length > 0" >
+      Generos:
+      <span class="badge badge-pill badge-secondary" *ngFor="let genero of generos">
+        {{ genero }}
+      </span>
+    </ng-template>
+    <ng-template [ngIf]="generos.length == 0" >
+      Generos:
+      <span class="badge badge-pill badge-secondary">No hay coincidencias </span>
+    </ng-template>
+    <br>
+    Seguirdores:
+    <span class="badge badge-warning">{{followers | number}}</span>
+  </p>
+
+</div>

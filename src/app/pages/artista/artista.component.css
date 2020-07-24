@@ -1,0 +1,62 @@
+b,h2{
+  color: antiquewhite;
+}
+
+.titlealbm{
+  color: white;
+}
+
+#style-1{
+  border: 1.5px solid #343a40;
+  background-color: transparent;
+  padding: 30px 15px;
+  height: 173px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  flex-flow: inherit;
+}
+
+#style-2{
+  border: 1.5px solid #343a40;
+  background-color: transparent;
+  padding: 25px 15px;
+  height: 315px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  flex-flow: inherit;
+}
+
+.style-scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.style-scrollbar::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px #343a40;
+  border-radius: 10px;
+}
+
+.style-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px #e2e5e7;
+}
+
+.canciones-populares{
+  width: 100%;
+  margin-top: 24px;
+}
+
+.itemss {
+  max-height: 320px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.border-top-bottom {
+  border-top: 1px solid #343a40;
+  border-bottom: 1px solid #343a40;
+  padding: 5px 0px;
+  display: grid;
+  grid-template-columns: 5% 10% 75% 1fr;
+}

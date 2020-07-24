@@ -1,0 +1,68 @@
+<app-loading *ngIf="loading"></app-loading>
+
+<div class="row w-100 animated fadeIn" style="padding: 20px 40px;" *ngIf="!loading">
+
+  <div class="col-4 animated fadeIn">
+    <div class="card m-2 float-left" style="background-color: transparent;">
+      <img [src]="artista.image"
+        class="rounded float-left mx-auto d-block rounded-circle"
+        style="width: 200px; height: 200px;">
+      <div class="card-body">
+        <h2 class="card-title text-center">{{artista.nombre}}</h2>
+        <p class="card-text">
+          <b>Generos: </b>
+          <span class="badge badge-pill badge-info" *ngFor="let genero of artista.generos">{{genero}}</span>
+          <br>
+          <b>Followers: </b>
+          <span class="badge badge-warning">{{artista.followers | number}}</span>
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <h5><b>Artistas similares a <span class="badge badge-pill badge-light">{{artista.nombre}}</span></b></h5>
+    </div>
+    <div class="card col style-scrollbar" id="style-1">
+      <img  *ngFor="let image of artistasSimilares" [src]="image"
+      class="rounded d-block rounded-circle"
+      style="width: 100px; height: 100px; margin-right: 5px;">
+    </div>
+  </div>
+
+  <div class="col-8" *ngIf="!loading">
+
+    <div>
+      <h5><b>Albums de {{artista.nombre}} </b></h5>
+    </div>
+    <div class="style-scrollbar" id="style-2">
+      <div class="card m-2 col-3" style="background-color: transparent;" *ngFor="let infoElement of albums">
+          <img [src]="infoElement.img" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title titlealbm" style="font-size: 0.8rem;">{{ infoElement.nombre }}</h5>
+            <p class="card-text titlealbm" style="font-size: 0.8rem;">{{ infoElement.fecha | date:'yyyy, MMM' }}</p>
+          </div>
+      </div>
+    </div>
+
+    <div class="canciones-populares">
+      <div class="w-100 mb-2" style="font-size: 1.2em;">
+        Canciones más populares
+      </div>
+      <div class="itemss style-scrollbar">
+        <div class="border-top-bottom" *ngFor="let cancion of popularTracks; let i = index">
+          <span class="d-flex justify-content-center align-items-center"> {{ i + 1 }} </span>
+          <div class="d-flex justify-content-center align-items-center">
+            <img [src]="cancion.img" style="width: 40px; height: 40px;">
+          </div>
+          <div style="display: flex;flex-flow: column wrap;align-items: flex-start;justify-content: flex-start;">
+            <div>{{ cancion.nameSong }}</div>
+            <div style="font-size: 0.8rem; color: #c0c0c0;">{{ cancion.albumName }}</div>
+          </div>
+          <span class="d-flex justify-content-center align-items-center"> {{ cancion.duracion | date:'mm:ss' }}</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

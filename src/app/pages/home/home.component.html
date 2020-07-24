@@ -1,0 +1,23 @@
+<app-loading *ngIf="loading"></app-loading>
+
+<div class="cont-cards animated fadeIn">
+  <div class="cont-elementos text-center">
+    <h2> {{ titulo }} </h2>
+
+    <div class="row">
+      <div class="card-columns">
+        <div class="card m-2 puntero" *ngFor="let item of elementos" (click)="verArtista(item.artistaId)">
+          <app-cards *ngIf="titulo == 'Nuevos Lanzamientos'" [imagen]="item.images"
+                      [title]="item.nombre" [artistas]="item.artistas"
+                      [fechaRelease]="item.lanzamiento">
+          </app-cards>
+          <app-cards *ngIf="titulo == 'Artistas Encontrados'" [imagen]="item.images"
+                      [title]="item.nombre" [tipyCard]="item.tipo"
+                      [followers]="item.followers" [generos]="item.generos">
+          </app-cards>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

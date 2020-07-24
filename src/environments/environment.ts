@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  grant_type: 'client_credentials',
+  client_id: '4ea5b45351e6447d9b83d76e9bcc4b7c',
+  client_secret: 'a945a22cbbd249e0a28b00922f5c4b02',
+  tokenUrl: 'https://accounts.spotify.com/api/token',
+  api: '	https://api.spotify.com/v1',
+  defaultIMG: 'https://marketing4ecommerce.net/wp-content/plugins/accelerated-mobile-pages/images/SD-default-image.png'
 };
 
 /*

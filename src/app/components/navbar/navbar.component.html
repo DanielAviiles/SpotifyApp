@@ -1,0 +1,50 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="home">
+    <img src="assets/img/banner-ico.png" width="30" height="30" alt="" loading="lazy">
+    SpotiApp
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <!-- <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="home">Home </a>
+      </li>
+    </ul> -->
+
+    <form class="form-inline">
+      <div class="input-group mb-2" style="padding-left: 4rem;">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">
+              <span class="material-icons">search</span>
+          </span>
+        </div>
+        <input type="text" class="form-control" placeholder="Buscar Artista"
+                aria-describedby="basic-addon1" style="width: 20em;"
+                (input)="buscarArtista($event)">
+        <!-- <input #termino type="text" class="form-control" placeholder="Buscar Artista"
+                aria-describedby="basic-addon1" style="width: 20em;"
+                (keyup)="buscarArtista(termino.value)"> -->
+      </div>
+
+      <!-- <div class="input-group mb-2" style="padding-left: 5rem;">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">
+              <span class="material-icons">search</span>
+            </span>
+          </div>
+          <input type="text" class="form-control" placeholder="Buscar Canción"
+                  aria-describedby="basic-addon1" style="width: 20em;"
+                  (input)="buscarCancion($event)">
+        </div> -->
+    </form>
+
+  </div>
+</nav>
